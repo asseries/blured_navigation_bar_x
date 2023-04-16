@@ -40,7 +40,7 @@ Bottom Navigation View Library for Flutter
 
 ```yaml
 # add this line to your dependencies
-blured_navitation_bar_x: ^1.0.0
+blured_navigation_bar_x: ^1.0.1
 ```
 
 ```dart
