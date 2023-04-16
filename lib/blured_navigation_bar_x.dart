@@ -8,8 +8,6 @@ import 'package:blured_navigation_bar_x/extensions.dart';
 import 'package:blured_navigation_bar_x/utils.dart';
 import 'package:flutter/material.dart';
 
-import 'animations.dart';
-
 typedef ItemBuilder = Widget Function(BuildContext context, int index, BluredNavBarXItem items);
 
 class BluredNavigationBarX extends StatefulWidget {
