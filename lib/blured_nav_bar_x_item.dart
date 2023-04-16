@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//blured navigation view item
 class BluredNavBarXItem {
   final String? title;
   final IconData? icon;

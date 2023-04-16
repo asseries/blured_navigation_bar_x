@@ -15,6 +15,12 @@ Bottom Navigation View Library for Flutter
 >  - MacOS
 >  - Web
 
+## ADAPTIVE
+<p  align="center">
+<img  src="https://github.com/asseries/blured_navigation_bar_x/blob/main/adaptive.gif?raw=true"  width="350"/>
+<br>
+</p>
+
 ## WITH BORDER
 <p  align="center">
 <img  src="https://github.com/asseries/blured_navigation_bar_x/blob/main/with_border.gif?raw=true"  width="350"/>
@@ -40,7 +46,7 @@ Bottom Navigation View Library for Flutter
 
 ```yaml
 # add this line to your dependencies
-blured_navigation_bar_x: ^1.0.1
+blured_navigation_bar_x: ^1.0.2
 ```
 
 ```dart

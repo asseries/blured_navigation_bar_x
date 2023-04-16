@@ -37,11 +37,9 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BluredNavigationBarX(
           currentIndex: _index,
           labelStatus: LabelStatus.showSelected,
-          backgroundColor: Colors.black87.withOpacity(.2),
-          browColor: Colors.red,
-          border: Border.all(width: 3, color: Colors.red),
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: Colors.red,
+          backgroundColor: Colors.black.withOpacity(.5),
+          selectedItemColor: Colors.deepOrange,
+          browColor: Colors.deepOrange,
           items: [
             BluredNavBarXItem(icon: Icons.home, title: 'Home'),
             BluredNavBarXItem(icon: Icons.favorite, title: 'Favorite'),

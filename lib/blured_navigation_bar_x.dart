@@ -11,24 +11,62 @@ import 'package:flutter/material.dart';
 typedef ItemBuilder = Widget Function(BuildContext context, int index, BluredNavBarXItem items);
 
 class BluredNavigationBarX extends StatefulWidget {
+
+  //items
   final List<BluredNavBarXItem> items;
+
+  //current index
   final int currentIndex;
+
+  //on pressed
   final void Function(int v)? onPressed;
+
+  //selected item color
   final Color? selectedItemColor;
+
+  //unselected item color
   final Color? unselectedItemColor;
+
+  //background color
   final Color backgroundColor;
+
+  //font size
   final double fontSize;
+
+  //icon size
   final double iconSize;
-  final double itemBorderRadius;
+
+  //border radius
   BorderRadius? borderRadius;
+
+  //item builder
   final ItemBuilder itemBuilder;
+
+  //The remaining distance from the outside
   final EdgeInsetsGeometry margin;
+
+  //The remaining distance from the inside
   final EdgeInsetsGeometry padding;
+
+  //width
   final double width;
+
+  //shadow
   final double elevation;
+
+  //blur radius
   final double blurRadius;
+
+  //navigation view border
   final Border? border;
+
+  //The color of the animated shape above
   final Color browColor;
+
+  //label status
+  //enabled
+  //disabled
+  //showSelected - > To appear when selected
   final LabelStatus labelStatus;
 
   BluredNavigationBarX(
@@ -42,7 +80,6 @@ class BluredNavigationBarX extends StatefulWidget {
       this.iconSize = 24.0,
       this.fontSize = 11.0,
       this.borderRadius,
-      this.itemBorderRadius = 8,
       this.unselectedItemColor = Colors.white,
       this.margin = const EdgeInsets.all(8),
       this.padding = const EdgeInsets.symmetric(vertical: 8),
@@ -65,7 +102,6 @@ class BluredNavigationBarX extends StatefulWidget {
             backgroundColor: backgroundColor,
             currentIndex: currentIndex,
             iconSize: iconSize,
-            itemBorderRadius: itemBorderRadius,
             items: items,
             onPressed: onPressed,
             browColor: browColor,
@@ -144,7 +180,6 @@ ItemBuilder _itemBuilder({
   double width = double.infinity,
   double? fontSize,
   double? iconSize,
-  double? itemBorderRadius,
   BorderRadius? borderRadius,
   Color? browColor,
   LabelStatus labelStatus = LabelStatus.enabled,
@@ -185,7 +220,7 @@ ItemBuilder _itemBuilder({
             children: [
               AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(itemBorderRadius!)),
+                decoration: BoxDecoration(borderRadius: borderRadius),
                 child: InkWell(
                   onTap: () {
                     onPressed!(index);
@@ -246,9 +281,7 @@ ItemBuilder _itemBuilder({
                                                   fontSize: fontSize,
                                                 ),
                                               )
-                                            : Container(
-                                                height: 32,
-                                              ),
+                                            : Container(),
                                   ],
                                 )
                             ],
