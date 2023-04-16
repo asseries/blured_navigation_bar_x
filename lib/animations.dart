@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 enum ToastDirection { ltr, rtl, ttb, btt }
 
-enum AnimationForce { hight, medium, light, heavy }
+enum AnimationForce {high, medium, light, heavy }
 
 class AsBouncingAnimation extends StatefulWidget {
   Widget child;
@@ -64,7 +64,7 @@ class _AsBouncingAnimationState extends State<AsBouncingAnimation> {
   }
 
   double setAnimationForce(AnimationForce animationForce) {
-    if (animationForce == AnimationForce.hight) {
+    if (animationForce == AnimationForce.high) {
       return 8.0;
     } else if (animationForce == AnimationForce.light) {
       return 2.0;
