@@ -1,54 +1,3 @@
-# [blured_navigation_bar_x](https://pub.dev/packages/blured_navigation_bar_x)
-
-
-Bottom Navigation View Library for Flutter
-
-## BLURED BOTTOM NAVIGATION VIEW
-
-> Supported Platforms
-
->
->  - Android
->  - iOS
->  - Windows
->  - Linux
->  - MacOS
->  - Web
-
-## WITH BORDER
-<p  align="center">
-<img  src="https://github.com/asseries/blured_navigation_bar_x/blob/main/with_border.gif?raw=true"  width="350"/>
-<br>
-</p>
-
-## DEFAULT
-<p  align="center">
-<img  src="https://github.com/asseries/blured_navigation_bar_x/blob/main/default.gif?raw=true"  width="350"/>
-<br>
-</p>
-
-## SHOW SELECTED LABEL 
-<p  align="center">
-<img  src="https://github.com/asseries/blured_navigation_bar_x/blob/main/selected_show_label.gif?raw=true"  width="350"/>
-<br>
-</p>
-
-
-
-
-## How to Use
-
-```yaml
-# add this line to your dependencies
-blured_navitation_bar_x: ^1.0.0
-```
-
-```dart
-import 'package:blured_navitation_bar_x/blured_navitation_bar_x.dart';
-```
-
-
-```dart
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:blured_navigation_bar_x/blured_nav_bar_x_item.dart';
@@ -82,6 +31,7 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           height: double.infinity,
           width: double.infinity,
+          color: colorList[_index], //Color.fromARGB(_index, 50, 200, 50),
           child: Center(child: Screen(index: _index)),
         ),
         bottomNavigationBar: BluredNavigationBarX(
@@ -108,6 +58,17 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+//If there are no pictures, the pages should be distinguished by color
+List<Color> colorList = [
+  Colors.green,
+  Colors.blueAccent,
+  Colors.orange,
+  Colors.black26,
+  Colors.white54,
+  Colors.tealAccent,
+  Colors.deepPurpleAccent,
+];
+
 class Screen extends StatefulWidget {
   final int index;
 
@@ -130,6 +91,3 @@ class _ScreenState extends State<Screen> {
     );
   }
 }
-
-
-```
