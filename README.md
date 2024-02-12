@@ -50,7 +50,7 @@ blured_navigation_bar_x: ^1.0.2
 ```
 
 ```dart
-import 'package:blured_navitation_bar_x/blured_navitation_bar_x.dart';
+import 'package:blured_navigation_bar_x/blured_navigation_bar_x.dart';
 ```
 
 

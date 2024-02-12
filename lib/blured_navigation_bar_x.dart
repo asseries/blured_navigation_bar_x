@@ -1,4 +1,3 @@
-
 // ignore_for_file: library_private_types_in_public_api, must_be_immutable
 
 import 'dart:ui';
@@ -11,7 +10,6 @@ import 'package:flutter/material.dart';
 typedef ItemBuilder = Widget Function(BuildContext context, int index, BluredNavBarXItem items);
 
 class BluredNavigationBarX extends StatefulWidget {
-
   //items
   final List<BluredNavBarXItem> items;
 
@@ -144,7 +142,7 @@ class _BluredNavigationBarXState extends State<BluredNavigationBarX> {
                   alignment: Alignment.center,
                   children: [
                     ClipRRect(
-                      borderRadius: widget.borderRadius,
+                      borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
                       child: BackdropFilter(
                         filter:
                             ImageFilter.blur(sigmaY: widget.blurRadius, sigmaX: widget.blurRadius),
