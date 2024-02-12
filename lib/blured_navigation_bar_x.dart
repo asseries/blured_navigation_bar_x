@@ -125,45 +125,49 @@ class _BluredNavigationBarXState extends State<BluredNavigationBarX> {
     return BottomAppBar(
       color: Colors.transparent,
       elevation: widget.elevation,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-              padding: widget.padding,
-              margin: widget.margin,
-              width: widget.width,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: widget.borderRadius,
-                  border: widget.border,
-                  color: widget.backgroundColor,
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
-                      child: BackdropFilter(
-                        filter:
-                            ImageFilter.blur(sigmaY: widget.blurRadius, sigmaX: widget.blurRadius),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          mainAxisSize: MainAxisSize.max,
-                          children: items
-                              .asMap()
-                              .map((i, f) {
-                                return MapEntry(i, widget.itemBuilder(context, i, f));
-                              })
-                              .values
-                              .toList(),
+      child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: ScrollController(initialScrollOffset: 15),
+        child: Column(
+          children: [
+            Container(
+                padding: widget.padding,
+                margin: widget.margin,
+                width: widget.width,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: widget.borderRadius,
+                    border: widget.border,
+                    color: widget.backgroundColor,
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: widget.borderRadius ?? BorderRadius.circular(8),
+                        child: BackdropFilter(
+                          filter:
+                          ImageFilter.blur(sigmaY: widget.blurRadius, sigmaX: widget.blurRadius),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisSize: MainAxisSize.max,
+                            children: items
+                                .asMap()
+                                .map((i, f) {
+                              return MapEntry(i, widget.itemBuilder(context, i, f));
+                            })
+                                .values
+                                .toList(),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              )),
-        ],
+                    ],
+                  ),
+                )),
+          ],
+        ),
       ),
+
     );
   }
 }
